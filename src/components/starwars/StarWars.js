@@ -15,32 +15,40 @@ const StarWars = () => {
 
     // main function when button is clicked
     const showResults = () => {
+        
         // toggle button state on click
         setbuttonClicked(!buttonClicked);
 
+        // Don't call api when hiding data
+        if(buttonClicked){
+            return false;
+        }
+        // API Server url to fetch data
+        const API_SERVER = 'http://starwars.us-west-2.elasticbeanstalk.com';
+
         // fetach data from apis
-        fetch('http://starwars.us-west-2.elasticbeanstalk.com/api/film/LongestOpeningCrawl')
+        fetch(API_SERVER + '/api/film/LongestOpeningCrawl')
             .then(res => res.json())
             .then((data) => {
                 setLongestOpeningCrawl(data[0]);
             })
             .catch(console.log);
 
-        fetch('http://starwars.us-west-2.elasticbeanstalk.com/api/film/MostAppearencesCharacter')
+        fetch(API_SERVER + '/api/film/MostAppearencesCharacter')
             .then(res => res.json())
             .then((data) => {
                 setMostAppearencesCharacter(data);
             })
             .catch(console.log);
 
-        fetch('http://starwars.us-west-2.elasticbeanstalk.com/api/film/MostAppearencessSpecies')
+        fetch(API_SERVER + '/api/film/MostAppearencessSpecies')
             .then(res => res.json())
             .then((data) => {
                 setMostAppearencessSpecies(data);
             })
             .catch(console.log);
 
-        fetch('http://starwars.us-west-2.elasticbeanstalk.com/api/film/MostPlanetVehicles')
+        fetch(API_SERVER + '/api/film/MostPlanetVehicles')
             .then(res => res.json())
             .then((data) => {
                 setMostPlanetVehicles(data);
@@ -52,7 +60,7 @@ const StarWars = () => {
         <div className="mainBox">
             
             <div className="logo">
-                <img src="/Star_wars_logo.png" alt="Star Wars"></img>
+                <img src="/Star_Wars_Logo.png" alt="Star Wars"></img>
             </div>
             <div className="btnContainer">
                 <button className={buttonClicked ? 'clicked' : ''} onClick={() => { showResults() }}>
