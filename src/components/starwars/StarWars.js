@@ -52,7 +52,7 @@ const StarWars = () => {
         <div className="mainBox">
             
             <div className="logo">
-                <img src="/Star_wars_logo.png" alt="Star Wars"></img>
+                <img src="/Star_Wars_Logo.png" alt="Star Wars"></img>
             </div>
             <div className="btnContainer">
                 <button className={buttonClicked ? 'clicked' : ''} onClick={() => { showResults() }}>
