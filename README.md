@@ -17,3 +17,6 @@ The terminal will show both local and network URL (to test the app on mobile dev
 - Google fonts file is added in main index.html file while the logo is added in Public folder.
 - Button is toggled on click to show/hide data.
 - Tested on mobile screen and adjusted css accordingly.
+- Project is hosted on AWS
+
+https://master.d1aog284r4t8k6.amplifyapp.com/ 
